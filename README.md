@@ -38,8 +38,11 @@ The **Smart Inventory Management System (SIMS)** is an intelligent software solu
 ## 🔧 How to Run
 
 ```bash
-    g++ -std=c++17 main.cpp -o sims
-    ./sims
+    mkdir build
+    cd build
+    cmake ..
+    make
+    ../bin/sims
 ```
 
 
