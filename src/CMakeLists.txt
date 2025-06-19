@@ -7,7 +7,10 @@
 # collaborator's builds will fail and it will be unclear why. Whether you use
 # file(GLOB ...) or not, you will need to re-run cmake, but with an explicit
 # file list, you know beforehand why your code isn't compiling. 
-set(sims_app_SRC    )
+set(sims_app_SRC
+    ${CMAKE_SOURCE_DIR}/include/sqlite3.c
+
+)
 
 # ... and pass the variable to the parent scope.
 set(sims_app_SRC ${sims_app_SRC}  PARENT_SCOPE)

@@ -9,6 +9,7 @@
 # file list, you know beforehand why your code isn't compiling. 
 set(sims_app_INC
     ${CMAKE_CURRENT_SOURCE_DIR}/CLI11.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/sqlite3.h
     PARENT_SCOPE
     )
 

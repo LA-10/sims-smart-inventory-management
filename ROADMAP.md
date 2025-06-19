@@ -6,17 +6,17 @@ This roadmap outlines the development phases for the **Smart Inventory Managemen
 
 ## ✅ Phase 1: Planning and Requirements
 
-- [ ] Define project scope and use cases
-- [ ] Decide tech stack: C++, SQLite, CLI
-- [ ] Define user roles (Admin, Manager, Employee)
+- [X] Define project scope and use cases
+- [X] Decide tech stack: C++, SQLite, CLI
+- [X] Define user roles (Admin, Manager, Employee)
 
 ---
 
 ## 🏗️ Phase 2: System Design
 
-- [ ] Design system architecture (modular structure)
-- [ ] Create database schema for inventory, users, orders
-- [ ] Plan object-oriented class relationships (UML)
+- [X] Design system architecture (modular structure)
+- [X] Create database schema for inventory, users, orders
+- [X] Plan object-oriented class relationships (UML)
 
 ---
 

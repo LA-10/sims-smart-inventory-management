@@ -1,22 +1,32 @@
+#include <sqlite3.h>
+#include <cstdio>
+#include <string>
 #include <CLI11.hpp>
-#include <iostream>
 
-int main(int argc, char **argv) {
-    
-    CLI::App app{"AI-powered inventory management system in C++ for real-time stock tracking, sales analytics, low-stock alerts, and intelligent inventory optimization"};
-    app.require_subcommand(/* min */ 0, /* max */ 1);
+sqlite3* db;
 
-    argv = app.ensure_utf8(argv);
+//open the database
+void openDB(std::string filename, sqlite3* database)
+{
+    char arr[filename.length() + 1]; 
 
-    // Define subcommands
+    for (int x = 0; x < sizeof(arr); x++) { 
+        arr[x] = filename[x]; 
+    } 
 
-    CLI::App* admin = app.add_subcommand("admin", "admin premission");
-    CLI::App* manager = app.add_subcommand("manager", "manager premission");
-    CLI::App* Employee = app.add_subcommand("employee", "employee premission");
+    int opened = sqlite3_open(arr, &database);
+    if(opened){ // check if opening the database is successful
+        printf("Database could not be opened %s \n", sqlite3_errmsg(database));
+    } else {
+        printf("opened database successfuly \n");
+        db = database;
+    }
+}
 
-    CLI11_PARSE(app, argc, argv);
+int main(int, char**){
+    std::string filename = "inventory.db";
+    openDB(filename,  db);
 
 
-
-    return 0;
+      
 }

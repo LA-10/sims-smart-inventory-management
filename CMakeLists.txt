@@ -31,7 +31,11 @@ target_include_directories(sims_app PUBLIC
 target_link_libraries(sims_app ${LAPACK_LIBRARIES})
 
 # Create executable (main app)
-add_executable(sims src/main.cpp)
+add_executable(sims 
+    src/main.cpp 
+    include/sqlite3.c 
+)
+
 target_link_libraries(sims sims_app)
 
 # Unit testing
